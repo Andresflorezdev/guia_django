@@ -1,0 +1,147 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f5f5f3;
+  color: #1a1a18;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+.wrapper {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.5px solid #e0ded6;
+}
+.header h1 { font-size: 22px; font-weight: 500; margin-bottom: 4px; }
+.header p { font-size: 14px; color: #6b6b65; }
+
+.progress-bar { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 2rem; }
+.step-dot {
+  width: 30px; height: 30px; border-radius: 50%;
+  border: 0.5px solid #c8c6be;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 500; cursor: pointer;
+  color: #6b6b65;
+  transition: all 0.2s;
+  user-select: none;
+}
+.step-dot:hover { border-color: #888; }
+.step-dot.active { background: #dbeafe; color: #1d4ed8; border-color: #93c5fd; }
+.step-dot.done { background: #dcfce7; color: #15803d; border-color: #86efac; }
+
+.step-tag {
+  font-size: 11px; font-weight: 500;
+  padding: 3px 10px; border-radius: 99px;
+  background: #dbeafe; color: #1d4ed8;
+  display: inline-block; margin-bottom: 8px;
+}
+.step-title { font-size: 20px; font-weight: 500; margin-bottom: 6px; }
+.step-desc { font-size: 14px; color: #6b6b65; line-height: 1.7; margin-bottom: 1.5rem; }
+
+.section { margin-bottom: 1.25rem; }
+.section-label {
+  font-size: 12px; font-weight: 500; color: #6b6b65;
+  text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;
+}
+
+.code-block {
+  background: #f5f5f3;
+  border: 0.5px solid #e0ded6;
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-x: auto;
+  white-space: pre;
+}
+.comment { color: #9ca3af; }
+.cmd { color: #1d4ed8; }
+.str { color: #15803d; }
+.kw { color: #b45309; }
+
+.info-cards { display: grid; gap: 10px; }
+.info-card {
+  background: #fff;
+  border: 0.5px solid #e0ded6;
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+.info-card-title { font-size: 13px; font-weight: 500; margin-bottom: 4px; }
+.info-card-body { font-size: 13px; color: #6b6b65; line-height: 1.5; }
+.file-name { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 12px; color: #1d4ed8; }
+
+.tip-box {
+  background: #fffbeb;
+  border: 0.5px solid #fcd34d;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 13px; color: #92400e; line-height: 1.5;
+}
+.tip-box strong { font-weight: 500; }
+.tip-box code { font-family: 'SF Mono', 'Fira Code', monospace; }
+
+.nav-buttons { display: flex; gap: 10px; margin-top: 2rem; padding-top: 1.5rem; border-top: 0.5px solid #e0ded6; }
+button {
+  padding: 9px 20px; border-radius: 8px;
+  border: 0.5px solid #c8c6be;
+  background: transparent; cursor: pointer; font-size: 14px;
+  color: #1a1a18; transition: all 0.15s;
+  font-family: inherit;
+}
+button:hover { background: #f5f5f3; }
+button:disabled { opacity: 0.35; cursor: not-allowed; }
+button.primary {
+  background: #dbeafe; color: #1d4ed8;
+  border-color: #93c5fd;
+}
+button.primary:hover { background: #bfdbfe; }
+
+.badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px; border-radius: 50%;
+  font-size: 11px; font-weight: 500;
+}
+.badge-blue { background: #dbeafe; color: #1d4ed8; }
+.badge-green { background: #dcfce7; color: #15803d; }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 500px) { .grid-2 { grid-template-columns: 1fr; } }
+
+code { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 12px; }
+
+@media (prefers-color-scheme: dark) {
+  body { background: #1a1a18; color: #e8e6de; }
+  .wrapper { background: #242422; box-shadow: none; border: 0.5px solid #3a3a38; }
+  .header { border-color: #3a3a38; }
+  .header p { color: #9ca3af; }
+  .step-dot { border-color: #4a4a48; color: #9ca3af; }
+  .step-dot.active { background: #1e3a5f; color: #60a5fa; border-color: #3b82f6; }
+  .step-dot.done { background: #14532d; color: #4ade80; border-color: #22c55e; }
+  .step-tag { background: #1e3a5f; color: #60a5fa; }
+  .step-desc { color: #9ca3af; }
+  .section-label { color: #9ca3af; }
+  .code-block { background: #1a1a18; border-color: #3a3a38; }
+  .comment { color: #6b7280; }
+  .cmd { color: #60a5fa; }
+  .str { color: #4ade80; }
+  .kw { color: #fbbf24; }
+  .info-card { background: #1e1e1c; border-color: #3a3a38; }
+  .info-card-body { color: #9ca3af; }
+  .file-name { color: #60a5fa; }
+  .tip-box { background: #292100; border-color: #ca8a04; color: #fbbf24; }
+  button { border-color: #4a4a48; color: #e8e6de; }
+  button:hover { background: #2e2e2c; }
+  button.primary { background: #1e3a5f; color: #60a5fa; border-color: #3b82f6; }
+  button.primary:hover { background: #1e3050; }
+  .nav-buttons { border-color: #3a3a38; }
+  .badge-blue { background: #1e3a5f; color: #60a5fa; }
+  .badge-green { background: #14532d; color: #4ade80; }
+}
